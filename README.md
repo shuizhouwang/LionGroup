@@ -1,6 +1,7 @@
- We aim to develop an interactive web application for Columbia students to group together for different types of events. The motivation of this project initially comes from our brainstorming meeting when one teammate mentioned the need to group together at night to walk back home together for safety.
+  We aim to develop an interactive web application for Columbia students to group together for different types of events. The motivation of this project initially comes from our brainstorming meeting when one teammate mentioned the need to group together at night to walk back home together for safety.
 
 Function reviews:
+
 1.User Interface
 – Register: Nickname, email address, profile picture, password, and a brief self-introduction are required when registering for a new account 
 – Login: Correct password and the unique user ID provided automatically after registering successfully are required.
