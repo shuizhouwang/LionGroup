@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+<div class="container">
+    <form class="form-signin" action='/user/login/' method='post'>
+        <h2 class="form-signin-heading">Sign into LionGroup</h2>
+        <label for="userId" class="sr-only">User id</label>
+        <input type="number" id="userId" name='user_id' class="form-control" placeholder="User id" required
+               autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name='password' class="form-control" placeholder="Password" required>
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">sign in</button>
+            </div>
+            <div class="col-6">
+                <a href="/register/" class="btn btn-lg btn-primary w-100">register</a>
+            </div>
+        </div>
+    </form>
+
+</div> <!-- /container -->
+
+
+</body>
+{% include 'header.html' %}
+<link href="http://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet">
+
+</html>

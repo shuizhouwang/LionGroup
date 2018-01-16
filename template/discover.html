@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event</title>
+    {% include 'header.html' %}
+    <style>
+        div.momment-card {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+{% include 'navbar.html' %}
+<div class="container" , style="max-width:46rem">
+    <div>
+        <form action='/discover/search/' method='post'>
+            <div class="row">
+                <div class="col-2"><label class="float-right" style="margin-top: 10px">Key word: </label></div>
+                <div class="col-7">
+                    <input type="text" style="margin-top: 5px" name='key_word' class="form-control">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block w-75 p-1" style="margin-top: 5px" type="submit">
+                        search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="header clearfix" , style="margin:20px auto 0;text-align:center">
+        <div class="row">
+            <div class="col-3">
+                <a href="/discover/" title="All types">
+                    <h4><span>All types</span></h4>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="/discover/study/" title="stude">
+                    <h4><span>Study together</span></h4>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="/discover/eat/" title="eat">
+                    <h4><span>Eat together</span></h4>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="/discover/home/" title="home">
+                    <h4><span>Go home together</span></h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% for d in events:%}
+    <div class="card momment-card">
+        {% if d['image'] != None: %}
+        {% if d['image'] != "" %}
+        <img class="card-img-top" src={{d['image']}}>
+        {% endif %}
+        {% endif %}
+        <div class="card-block">
+            <div class="row">
+                <div class="col-6">
+                    <h4><span style="color:darkblue">Nick name:</span>{{d['nick_name']}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4><span style="color:darkblue">Type:</span>{{d['type']}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h4><span style="color:darkblue">Start time:</span>{{d['starttime']}}{{d['starthour']}}{{d['startminute']}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4><span style="color:darkblue">End time:</span>{{d['endtime']}}{{d['endhour']}}{{d['endminute']}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h4><span style="color:darkblue">Email:</span>{{d['email']}}</h4>
+                </div>
+            </div>
+            <p class="card-text">{{d['content']}}</p>
+            <div class="row">
+                <div class="col-10"></div>
+                <div class="col-2" , style="margin:2px 5px 5px 2px">
+                    <label class="btn btn-lg btn-primary float-right btn-block w-75 p-1 join" id="join-{{d['event_id']}}">join</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script>
+    $(".join").click(function () {
+        var event_id = $(this).attr('id').split("-")[1];
+        let jsonData = {"event_id": event_id};
+        $.ajax({
+            type: 'POST',
+            url: "/discover/join/",
+            dataType: "text",
+            data: jsonData,
+            success: (res) => {
+                window.location.reload();
+            }
+        });
+    });
+</script>
+</body>
+
+
+</html>
