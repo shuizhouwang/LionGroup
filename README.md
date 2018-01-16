@@ -1,4 +1,4 @@
-  We aim to develop an interactive web application for Columbia students to group together for different types of events. The motivation of this project initially comes from our brainstorming meeting when one teammate mentioned the need to group together at night to walk back home together for safety.
+ We aim to develop an interactive web application for Columbia students to group together for different types of events. The motivation of this project initially comes from our brainstorming meeting when one teammate mentioned the need to group together at night to walk back home together for safety.
 
 Function reviews:
 
@@ -25,15 +25,15 @@ Function reviews:
 
  Tools:
 1. Web APP Framework - Flask
-  • Frontend: HTML, JavaScrpit in Frontend layer
-  • Backend: Python in Router Layer, Logic layer, and database layer 
+• Frontend: HTML, JavaScrpit in Frontend layer
+• Backend: Python in Router Layer, Logic layer, and database layer 
 2. Developer Tool
-  • Pycharm: This IDE was utilized so that teammates can code and commit the modification easily without actually siting together. The commit screenshot can be seen in Appendix.
-  • Github: Every modification was committed and pushed onto our mutual private repository during the development process.
+• Pycharm: This IDE was utilized so that teammates can code and commit the modification easily without actually siting together. The commit screenshot can be seen in Appendix.
+•  Github: Every modification was committed and pushed onto our mutual private repository during the development process.
 3. AWS Service
-  • EC2 Mongo: MongoDB was used in this project due to its NoSQL feature, which makes it relatively easy to search, add, delete and modify item content.
-  • ElasticSearch: This service is used to store all the events created by users so that users can search events by keywords.
-  • SES, SNS: These services are used for sending email notification when necessary.
-  • AWS CLI: This terminal plugin was installed for monitor the mongoDB on EC2 as developer.
+• EC2 Mongo: MongoDB was used in this project due to its NoSQL feature, which makes it relatively easy to search, add, delete and modify item content.
+• ElasticSearch: This service is used to store all the events created by users so that users can search events by keywords.
+• SES, SNS: These services are used for sending email notification when necessary.
+• AWS CLI: This terminal plugin was installed for monitor the mongoDB on EC2 as developer.
 4. Machine Learning
-  • AWS Comprehend: This machine learning API is used to analyze the text composed by all the event description written by a user to detect the mood of this user.
+• AWS Comprehend: This machine learning API is used to analyze the text composed by all the event description written by a user to detect the mood of this user.
