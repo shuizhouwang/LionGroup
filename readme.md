@@ -2,12 +2,12 @@ We aim to develop an interactive web application for Columbia students to group 
 
 Function reviews:
 
-1.User Interface
+1. User Interface
 – Register: Nickname, email address, profile picture, password, and a brief self-introduction are required when registering for a new account 
 – Login: Correct password and the unique user ID provided automatically after registering successfully are required.
 – Update User Profile: Any items filled in when registering for the account can be modified and updated in profile.
 
-2.User Activity
+2. User Activity
 – Create event: After logging in successfully, the user can create event of type ”Eat”, ”Study” or ”Home” by filling in the event description, event time, event image and event type.
 – Browse Event: The user can browse the available events created by other users either by clicking on certain category (one the the three), or by going through all the events without specifying a certain type limit.
 – Join Event:   The user can join any event created by other users.
@@ -17,13 +17,13 @@ Function reviews:
 – Confirmation Subscription email: An email notification would be sent out using SES and SNS to the newly registered user for subscription conformation.
 – Learning based Reminder Message: An email reminder will be sent to the user if this user’s event (event description) history contains negative mood too often which might suggest that this user is under too much pressure.
 
-4.Developer Perspective
+4. Developer Perspective
 – Error Detection:
    ∗ User Log in:When the combination of password and user ID does not fit in any record in database, an error page will show up and user has to type in password again.
    ∗ Event Time: When the end time is earlier than the start time, the event cannot be created (posted), and an error page will show up.
 – Database Manipulation: The mongoDB has two collections for this web application. One is to store user item and the other is to store event item. To keep the browser page clean, the developer will refresh the event collection every few days so that the event history of user and the discover page for browsing events will not looks too lengthy thus interfering user’s efficiency of searching events.
 
- Tools:
+Tools:
 1. Web APP Framework - Flask
 - Frontend: HTML, JavaScrpit in Frontend layer
 - Backend: Python in Router Layer, Logic layer, and database layer 
